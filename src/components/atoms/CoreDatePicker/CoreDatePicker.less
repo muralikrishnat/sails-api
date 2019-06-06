@@ -1,0 +1,191 @@
+// Color variables (appears count calculates by raw css)
+@color0: #44bbdd; // Appears 6 times
+@color1: #eeeeee; // Appears 3 times
+@color2: #dddddd; // Appears 3 times
+@color3: #000000; // Appears 2 times
+@color4: #999999; // Appears 2 times
+
+// Width variables (appears count calculates by raw css)
+@width0: 14.285714285714286%; // Appears 3 times
+@width2: 33.333%; // Appears 2 times
+
+
+.rtl {
+	direction: rtl;
+}
+.vdp-datepicker {
+	position: relative;
+	text-align: left;
+	* {
+		box-sizing: border-box;
+	}
+}
+.vdp-datepicker__calendar {
+	background: #ffffff;
+	border: 1px solid #cccccc;
+	position: absolute;
+	width: 300px;
+	z-index: 100;
+	header {
+		display: block;
+		line-height: 40px;
+		span {
+			display: inline-block;
+			float: left;
+			text-align: center;
+			width: 71.42857142857143%;
+		}
+		.prev {
+			float: left;
+			position: relative;
+			text-indent: -10000px;
+			width: @width0;
+			&:after {
+				border-right: 10px solid @color3;
+				border: 6px solid transparent;
+				content: '';
+				left: 50%;
+				margin-left: -5px;
+				position: absolute;
+				top: 50%;
+				transform: translateX(-50%) translateY(-50%);
+			}
+			&:not(.disabled) {
+				cursor: pointer;
+				hover {
+					background: @color1;
+				}
+			}
+		}
+		.next {
+			float: left;
+			position: relative;
+			text-indent: -10000px;
+			width: @width0;
+			&:after {
+				border-left: 10px solid @color3;
+				border: 6px solid transparent;
+				content: '';
+				left: 50%;
+				margin-left: 5px;
+				position: absolute;
+				top: 50%;
+				transform: translateX(-50%) translateY(-50%);
+			}
+			&:not(.disabled) {
+				cursor: pointer;
+				hover {
+					background: @color1;
+				}
+			}
+		}
+		.prev.disabled {
+			&:after {
+				border-right: 10px solid @color2;
+			}
+		}
+		.next.disabled {
+			&:after {
+				border-left: 10px solid @color2;
+			}
+		}
+		.up {
+			&:not(.disabled) {
+				cursor: pointer;
+				hover {
+					background: @color1;
+				}
+			}
+		}
+	}
+	.disabled {
+		color: @color2;
+		cursor: default;
+	}
+	.flex-rtl {
+		display: flex;
+		flex-wrap: wrap;
+		width: inherit;
+	}
+	.cell {
+		border: 1px solid transparent;
+		display: inline-block;
+		height: 40px;
+		line-height: 40px;
+		padding: 0 5px;
+		text-align: center;
+		vertical-align: middle;
+		width: @width0;
+		&:not(.blank) {
+			not('.disabled').day {
+				cursor: pointer;
+				hover {
+					border: 1px solid @color0;
+				}
+			}
+			not('.disabled').month {
+				cursor: pointer;
+				hover {
+					border: 1px solid @color0;
+				}
+			}
+			not('.disabled').year {
+				cursor: pointer;
+				hover {
+					border: 1px solid @color0;
+				}
+			}
+		}
+	}
+	.cell.selected {
+		background: @color0;
+		&:hover {
+			background: @color0;
+		}
+	}
+	.cell.selected.highlighted {
+		background: @color0;
+	}
+	.cell.highlighted {
+		background: #cae5ed;
+	}
+	.cell.highlighted.disabled {
+		color: #a3a3a3;
+	}
+	.cell.grey {
+		color: #888888;
+		&:hover {
+			background: inherit;
+		}
+	}
+	.cell.day-header {
+		cursor: inherit;
+		font-size: 75%;
+		white-space: nowrap;
+		&:hover {
+			background: inherit;
+		}
+	}
+	.month {
+		width: @width2;
+	}
+	.year {
+		width: @width2;
+	}
+}
+.vdp-datepicker__clear-button {
+	cursor: pointer;
+	font-style: normal;
+}
+.vdp-datepicker__calendar-button {
+	cursor: pointer;
+	font-style: normal;
+}
+.vdp-datepicker__clear-button.disabled {
+	color: @color4;
+	cursor: default;
+}
+.vdp-datepicker__calendar-button.disabled {
+	color: @color4;
+	cursor: default;
+}

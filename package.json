@@ -1,53 +1,40 @@
 {
-  "name": "xxxxxxxx-api",
-  "private": true,
+  "name": "timesheet-web",
   "version": "0.1.0",
-  "description": "xxxxxxxx API generated with ",
-  "keywords": [],
+  "private": true,
+  "scripts": {
+    "serve": "vue-cli-service serve",
+    "build": "vue-cli-service build",
+    "lint": "vue-cli-service lint",
+    "test:e2e": "vue-cli-service test:e2e",
+    "test:unit": "vue-cli-service test:unit",
+    "start": "vue-cli-service serve"
+  },
   "dependencies": {
-    "@okta/jwt-verifier": "0.0.12",
-    "@okta/okta-sdk-nodejs": "^1.2.0",
-    "@sailshq/connect-redis": "^3.2.1",
-    "@sailshq/lodash": "^3.10.3",
-    "@sailshq/socket.io-redis": "^5.2.0",
-    "async": "2.0.1",
-    "bcrypt-nodejs": "0.0.3",
-    "connect-mongo": "^2.0.1",
-    "convert-excel-to-json": "^1.4.0",
-    "grunt": "^1.0.3",
-    "json2xls": "^0.1.2",
-    "jsonwebtoken": "^8.3.0",
-    "node-excel-export": "^1.4.4",
-    "nodemailer": "^4.6.8",
-    "passport": "^0.4.0",
-    "passport-local": "^1.0.0",
-    "passport-saml": "^0.35.0",
-    "sails": "^1.0.2",
-    "sails-hook-grunt": "^3.0.2",
-    "sails-hook-orm": "^2.0.0-16",
-    "sails-hook-sockets": "^1.4.0",
-    "sails-mongo": "^1.0.1"
+    "core-js": "^2.6.5",
+    "msal": "^1.0.1",
+    "register-service-worker": "^1.6.2",
+    "vue": "^2.6.10",
+    "vue-class-component": "^7.0.2",
+    "vue-property-decorator": "^8.1.0",
+    "vue-router": "^3.0.3",
+    "vuex": "^3.0.1",
+    "vuex-class": "^0.3.2"
   },
   "devDependencies": {
-    "@sailshq/eslint": "^4.19.3"
-  },
-  "scripts": {
-    "start": "NODE_ENV=production node app.js",
-    "devel": "NODE_ENV=devel node app.js",
-    "staging": "NODE_ENV=staging node app.js",
-    "prod": "NODE_ENV=production node app.js",
-    "test": "npm run lint && npm run custom-tests && echo 'Done.'",
-    "lint": "eslint . --max-warnings=0 --report-unused-disable-directives && echo '✔  Your .js files look good.'",
-    "custom-tests": "echo \"(No other custom tests yet.)\" && echo"
-  },
-  "main": "app.js",
-  "repository": {
-    "type": "git",
-    "url": "git://github.com/anonymous node/sails user/xxxxxxxx-api.git"
-  },
-  "author": "anonymous node/sails user",
-  "license": "",
-  "engines": {
-    "node": ">=8.11"
+    "@types/jest": "^23.1.4",
+    "@vue/cli-plugin-babel": "^3.7.0",
+    "@vue/cli-plugin-e2e-cypress": "^3.7.0",
+    "@vue/cli-plugin-pwa": "^3.7.0",
+    "@vue/cli-plugin-typescript": "^3.7.0",
+    "@vue/cli-plugin-unit-jest": "^3.7.0",
+    "@vue/cli-service": "^3.7.0",
+    "@vue/test-utils": "1.0.0-beta.29",
+    "babel-core": "7.0.0-bridge.0",
+    "less": "^3.0.4",
+    "less-loader": "^4.1.0",
+    "ts-jest": "^23.0.0",
+    "typescript": "^3.4.3",
+    "vue-template-compiler": "^2.5.21"
   }
 }

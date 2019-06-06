@@ -1,27 +1,39 @@
-# xxxxxxxx-api
+# v-pract2
 
-a [Sails v1](https://sailsjs.com) application
+## Project setup
+```
+npm install
+```
 
+### Compiles and hot-reloads for development
+```
+npm run serve
+```
 
-### Links
+### Compiles and minifies for production
+```
+npm run build
+```
 
-+ [Get started](https://sailsjs.com/get-started)
-+ [Sails framework documentation](https://sailsjs.com/documentation)
-+ [Version notes / upgrading](https://sailsjs.com/documentation/upgrading)
-+ [Deployment tips](https://sailsjs.com/documentation/concepts/deployment)
-+ [Community support options](https://sailsjs.com/support)
-+ [Professional / enterprise options](https://sailsjs.com/enterprise)
+### Run your tests
+```
+npm run test
+```
 
+### Lints and fixes files
+```
+npm run lint
+```
 
-### Version info
+### Run your end-to-end tests
+```
+npm run test:e2e
+```
 
-This app was originally generated on Mon Sep 10 2018 13:00:26 GMT+0530 (India Standard Time) using Sails v1.0.2.
+### Run your unit tests
+```
+npm run test:unit
+```
 
-<!-- Internally, Sails used [`sails-generate@1.15.28`](https://github.com/balderdashy/sails-generate/tree/v1.15.28/lib/core-generators/new). -->
-
-
-
-<!--
-Note:  Generators are usually run using the globally-installed `sails` CLI (command-line interface).  This CLI version is _environment-specific_ rather than app-specific, thus over time, as a project's dependencies are upgraded or the project is worked on by different developers on different computers using different versions of Node.js, the Sails dependency in its package.json file may differ from the globally-installed Sails CLI release it was originally generated with.  (Be sure to always check out the relevant [upgrading guides](https://sailsjs.com/upgrading) before upgrading the version of Sails used by your app.  If you're stuck, [get help here](https://sailsjs.com/support).)
--->
-
+### Customize configuration
+See [Configuration Reference](https://cli.vuejs.org/config/).

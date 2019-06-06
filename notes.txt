@@ -1,15 +1,88 @@
-Insert Into unit_of_measure (uom_userid, uom_size_type, uom_epd_units, uom_weights, uom_pz_units, uom_towtype, uom_rodmksp, uom_trnsjet, uom_range_length, uom_epdbiasloc, uom_point_in_range, uom_firm_met, uom_language, uom_kretek, uom_sfactor, uom_maxpdlim, uom_pivmaxlim, uom_lowpdlim, uom_nmaxpdlim, uom_carbrange_length) 
+Applciation ID: 574f7932-d2aa-4973-914d-d10b275731e1
+Name: Timesheet Tool Dev
+
+Password: qgQ52823(lnsdsPISLBB]*%
+
+https://localhost:8080/sso
+https://localhost:8080/sso-logout
+
+https://portal.azure.com/#blade/Microsoft_AAD_RegisteredApps/ApplicationMenuBlade/Quickstart/appId/574f7932-d2aa-4973-914d-d10b275731e1/isMSAApp/
 
 
+Required APIs:
 
-INSERT INTO plug_wrap (pw_mfg, pw_corpor, pw_type, pw_thick, pw_weight, pw_name,	pw_owner) 
-Insert Into profiles (pr_owner, pr_name ,pr_rodlen, pr_rangelen ,pr_circ ,pr_diam ,pr_triacetin ,pr_minpir ,pr_maxpir ,pr_plugwrap) 
-Insert Into filtercost_profile (pcst_owner, pcst_name ,pcst_filtername, pcst_rmefficiency ,pcst_boblen ,pcst_hotmelt ,pcst_anchor ,pcst_menthol ,pcst_towprice ,pcst_pzprice ,pcst_pwprice ,pcst_hotmelprice ,pcst_anchorprice ,pcst_mentholprice) 
-Insert Into carbfiltercost_profile (pcarbcst_owner ,pcarbcst_name ,pcst_filtername ,pcst_filternamea ,pcst_filternameb ,pcst_rmefficiencya ,pcst_rmefficiencyb ,pcst_rmefficiencycomb ,pcst_boblen ,pcst_carb ,pcst_hotmelt ,pcst_anchor ,pcst_menthol ,pcst_towprice ,pcst_carbprice ,pcst_pzprice ,pcst_pwprice ,pcst_hotmelprice ,pcst_anchorprice ,pcst_mentholprice ,pcst_1)
-Insert Into epdbias (epd_highepdhcc, epd_highepdm, epd_intercept, epd_location, epd_lowepdhcc, epd_lowepdm, epd_slope, epd_userid)
-Insert Into firmunits (firmunit_selection, value_a, value_b, code, type)
-Insert Into Object (obj_form, obj_type, obj_language, obj_name, obj_text)  
+Projects, Tasks and Sub Tasks:
+Below request can be one request with all details as JSON
 
+[GET] /api/profilePic/empId
+Response: 
+base64
+
+[GET] /api/projects
+[GET] /api/project/:projectId/tasks
+[GET] /api/project/:projectId/task/:taskId/subtasks
+
+Project Schema
+{
+    projectId: string,
+    projectName: 'string',
+    isBillable: boolean
+}
+
+Task/Sub Task Schema
+{
+    taskId: 'number',
+    taskName: 'string',
+    projectId: string,
+    parentTaskId: 'number'
+}
+
+Timesheets
+[POST] /api/timesheets
+Headers {
+    "autorization": "Bearer ${token}"
+}
+
+Post Data
+{
+    startDate: Date,
+    endDate: Date
+}
+
+Expected Response:
+{
+    entryId: number,
+    entryDate: Date,
+    updatedOn: Date,
+    addedOn: Date,
+    projectId: number,
+    taskId: number,
+    subTaskId: number
+    comments: string
+    
+    approvalInfo: {
+        approvedOn: Date,
+        approvedBy: EmpId,
+        approvalStatus: boolean
+    }
+
+    isSubmitted: boolean
+}
+
+[POST] /api/timesheets/save
+PostData: 
+{
+    startDate: Date,
+    endDate: Date,
+    entries: [
+
+    ]
+}
+[POST] /api/timesheets/submission
+
+
+[POST] /api/timesheets/approval
+[POST] /api/timesheets/reject
 
 
 

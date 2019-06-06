@@ -1,0 +1,64 @@
+// @import 'fonts.less';
+@import 'color.less';
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    // font-family: 'Nunito Sans', sans-serif;
+}
+html, body {
+    min-height: 100vh;
+    font-family: 'Nunito Sans', sans-serif;
+    background-color: @color-base;
+}
+
+// (88 * 12) + (20 * 11) + 90 = 1366
+// (col-Width * 12) + (Gutter-Width * 11) + (outer-margin * 2)
+
+@import 'utils.less';
+
+.icon {
+    width: 16px;
+    height: 16px;
+    &.xs {
+        width: 12px;
+        height: 12px;
+    }
+    &.icon-20 {
+        width: 20px;
+        height: 20px;
+    }
+}
+.rotate-45 {
+    transform: rotate(45deg);
+}
+.rotate-90 {
+    transform: rotate(90deg);
+}
+.rotate-180 {
+    transform: rotate(180deg);
+}
+.rotate-90-rev {
+    transform: rotate(-90deg);
+}
+.width-90-px {
+    width: 90px;
+}
+
+.pagenotification-enter-active, .pagenotification-leave-active {
+    transition: transform .2s linear;
+}
+
+.pagenotification-enter, .pagenotification-leave-to  {
+    transform: translateY(-10%) scaleY(0);
+}
+
+.pagenotification-leave {
+    transform: translateY(-1%) scaleY(.6);
+}
+.pagenotification-leave-active {
+    transform: translateY(-5%) scaleY(.4);
+}
+
+

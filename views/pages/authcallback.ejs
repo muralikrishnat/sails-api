@@ -1,0 +1,13 @@
+<div>
+    Loading 
+</div>
+<script>
+    // location.href = "http://localhost:8081/"
+    var user = '<%- JSON.stringify(user) %>';
+    try {
+        user = JSON.parse(user);
+        location.href = "<%- uiCallbackUrl%>/#access_token=" + btoa(user['email']);
+    } catch(e) {
+        //swallow
+    }
+</script>

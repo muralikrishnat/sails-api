@@ -1,53 +1,24 @@
 {
-  "name": "xxxxxxxx-api",
+  "name": "reactCliNative",
+  "version": "0.0.1",
   "private": true,
-  "version": "0.1.0",
-  "description": "xxxxxxxx API generated with ",
-  "keywords": [],
+  "scripts": {
+    "start": "node node_modules/react-native/local-cli/cli.js start",
+    "test": "jest"
+  },
   "dependencies": {
-    "@okta/jwt-verifier": "0.0.12",
-    "@okta/okta-sdk-nodejs": "^1.2.0",
-    "@sailshq/connect-redis": "^3.2.1",
-    "@sailshq/lodash": "^3.10.3",
-    "@sailshq/socket.io-redis": "^5.2.0",
-    "async": "2.0.1",
-    "bcrypt-nodejs": "0.0.3",
-    "connect-mongo": "^2.0.1",
-    "convert-excel-to-json": "^1.4.0",
-    "grunt": "^1.0.3",
-    "json2xls": "^0.1.2",
-    "jsonwebtoken": "^8.3.0",
-    "node-excel-export": "^1.4.4",
-    "nodemailer": "^4.6.8",
-    "passport": "^0.4.0",
-    "passport-local": "^1.0.0",
-    "passport-saml": "^0.35.0",
-    "sails": "^1.0.2",
-    "sails-hook-grunt": "^3.0.2",
-    "sails-hook-orm": "^2.0.0-16",
-    "sails-hook-sockets": "^1.4.0",
-    "sails-mongo": "^1.0.1"
+    "react": "16.8.3",
+    "react-native": "0.59.9"
   },
   "devDependencies": {
-    "@sailshq/eslint": "^4.19.3"
+    "@babel/core": "^7.4.5",
+    "@babel/runtime": "^7.4.5",
+    "babel-jest": "^24.8.0",
+    "jest": "^24.8.0",
+    "metro-react-native-babel-preset": "^0.54.1",
+    "react-test-renderer": "16.8.3"
   },
-  "scripts": {
-    "start": "NODE_ENV=production node app.js",
-    "devel": "NODE_ENV=devel node app.js",
-    "staging": "NODE_ENV=staging node app.js",
-    "prod": "NODE_ENV=production node app.js",
-    "test": "npm run lint && npm run custom-tests && echo 'Done.'",
-    "lint": "eslint . --max-warnings=0 --report-unused-disable-directives && echo '✔  Your .js files look good.'",
-    "custom-tests": "echo \"(No other custom tests yet.)\" && echo"
-  },
-  "main": "app.js",
-  "repository": {
-    "type": "git",
-    "url": "git://github.com/anonymous node/sails user/xxxxxxxx-api.git"
-  },
-  "author": "anonymous node/sails user",
-  "license": "",
-  "engines": {
-    "node": ">=8.11"
+  "jest": {
+    "preset": "react-native"
   }
 }

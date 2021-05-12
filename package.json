@@ -18,7 +18,7 @@
     "json2xls": "^0.1.2",
     "jsonwebtoken": "^8.3.0",
     "node-excel-export": "^1.4.4",
-    "nodemailer": "^4.6.8",
+    "nodemailer": "^6.4.16",
     "passport": "^0.4.0",
     "passport-local": "^1.0.0",
     "passport-saml": "^0.35.0",
